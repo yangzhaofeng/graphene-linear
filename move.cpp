@@ -9,9 +9,15 @@ int main(){
 	//cout.precision(10);
 	mat locat(130,3,fill::zeros);
 	//cout<<locat<<endl;
+	/*
+	 * top-left is 7.3799754, 12.78249235
+	 * bottom-right is 14.75995080, 0
+	 * bottom-left is 0,0
+	 * top-right is 22.13992620, 12.78249235
+	 */
 	mat move = {	{ 1,	0,	0 },
 			{ 0,	1,	0 },
-			{ -14.75995080,	0,	1 } };
+			{ -22.13992620, -12.78249235,	1 } };
 	//cout <<rotate<<endl;
 	char c; double x,y,z[130]; int l=0;
 	while (cin>>c>>x>>y>>z[l]){
