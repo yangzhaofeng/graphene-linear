@@ -1,11 +1,12 @@
 #include <iostream>
 #include <armadillo>
+#include <iomanip>
 
 using namespace std;
 using namespace arma;
 
 int main(){
-	cout.precision(10);
+	//cout.precision(10);
 	mat locat(130,3,fill::zeros);
 	//cout<<locat<<endl;
 	mat rotate = {	{ 0.92857143,	0.37115374,	0 },
@@ -20,8 +21,9 @@ int main(){
 		locat(l,2)=z;
 		l++;
 	}
-	cout<<locat<<endl;
+	//cout<<locat<<endl;
 	mat result = locat * rotate;
+	cout << setprecision(8) << fixed;
 	//cout<<result<<endl;
 	result.raw_print(cout);
 	return 0;
