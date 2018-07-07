@@ -1,6 +1,7 @@
 #include <iostream>
 #include <armadillo>
 #include <cmath>
+#include <cstdlib>
 #include <iomanip>
 
 using namespace std;
@@ -8,10 +9,11 @@ using namespace arma;
 
 const double pi = 3.14159265359;
 
-int main(){
+int main(int argc, char *argv[]){
+	double ang = atof(argv[1]);
 	//cout.precision(10);
 	mat locat(400,3,fill::zeros);
-	double theta= 5 / 180 * pi;
+	double theta= ang / 180 * pi;
 	//cout<<locat<<endl;
 	mat rotate = {	{ cos(theta),	sin(theta),	0 },
 			{ -sin(theta),	cos(theta),	0 },
