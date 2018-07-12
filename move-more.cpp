@@ -7,7 +7,7 @@ using namespace std;
 using namespace arma;
 
 int main(int argc, char *argv[]){
-	double dx = atof(argv[1]), dy = atof(argv[2]);
+	double mx = atoi(argv[1]), my = atoi(argv[2]);
 	//cout.precision(10);
 	mat locat(130,3,fill::zeros);
 	//cout<<locat<<endl;
@@ -17,10 +17,11 @@ int main(int argc, char *argv[]){
 	 * bottom-left is 0,0
 	 * top-right is 22.13992620, 12.78249235
 	 */
-	mat move = {	{ 1,	0,	0 },
-			{ 0,	1,	0 },
-			{ dx,	dy,	1 } };
-	//cout <<rotate<<endl;
+	const double dxx = 14.75995080, dyx = 7.3799754, dyy = 12.78249235;
+	mat move = {	{ 1,			0,		0 },
+			{ 0,			1,		0 },
+			{ mx * dxx + my * dyx,	my * dyy,	1 } };
+	//cout <<move<<endl;
 	char c; double x,y,z[130]; int l=0;
 	while (cin>>c>>x>>y>>z[l]){
 		//cout<<c<<" "<<x<<" "<<y<<" "<<z<<endl;
